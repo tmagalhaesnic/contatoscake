@@ -13,7 +13,7 @@ class ContatosController extends AppController {
         if ($this->request->is('post')) {
             $this->Contato->create();
             if ($this->Contato->save($this->request->data)) {
-                $this->Flash->success(__('Sua mensagem foi enviada com sucesso!'));
+                $this->Flash->success(__('Seu contato foi salvo com sucesso!'));
                 return $this->redirect(array('action' => 'add'));
             }
             $this->Flash->error(__('Houve um erro. Tente novamente.'));

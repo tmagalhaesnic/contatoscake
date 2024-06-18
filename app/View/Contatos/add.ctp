@@ -18,7 +18,7 @@ $form .= $this->Form->input('Contato.telefone', array('id'=>'telefone'));
 <?php
 $form .= $this->Form->end('Send') ;
 
-echo $this->Html->tag('h1','Contato');
+
 echo $form;
-?>
+?>  
 </div>
