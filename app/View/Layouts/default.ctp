@@ -26,21 +26,26 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
-		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+
+		echo $this->Html->meta('icon');
+		echo $this->Html->css('style');
+
 	?>
+
+	<header>
+        <h1>Nic.br</h1>
+        <nav>
+            <a href="">Login</a>
+            <a href="">Ajuda</a>
+        </nav>
+    </header>
+
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'https://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
 
 			<?php echo $this->Flash->render(); ?>
 
