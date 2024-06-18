@@ -1,18 +1,20 @@
 <?php 
 
+App::uses("AppController","Controller");
+
 class ContatosController extends AppController {
     public $helpers = array('Html', 'Form');
 
     public function index() {
-        $this->set('messages', $this->Message->find('all'));
+        $this->set('contatos', $this->Contato->find('all'));
     }
 
     public function add() {
         if ($this->request->is('post')) {
-            $this->Message->create();
-            if ($this->Message->save($this->request->data)) {
+            $this->Contato->create();
+            if ($this->Contato->save($this->request->data)) {
                 $this->Flash->success(__('Sua mensagem foi enviada com sucesso!'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('action' => 'add'));
             }
             $this->Flash->error(__('Houve um erro. Tente novamente.'));
         }
